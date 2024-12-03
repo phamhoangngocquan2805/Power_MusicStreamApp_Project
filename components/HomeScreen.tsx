@@ -2,7 +2,9 @@ import React from 'react';
 import { View, Text, TextInput, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const HomeScreen = () => {
+import { NavigationProp } from '@react-navigation/native';
+
+export default function HomeScreen({ navigation }: { navigation: NavigationProp<any> }) {
   return (
     <ScrollView style={styles.container}>
       {/* Header */}
@@ -44,8 +46,14 @@ const HomeScreen = () => {
       <Text style={styles.sectionTitle}>Charts</Text>
       <View style={styles.charts}>
         <View style={styles.chartItem}>
+        <TouchableOpacity
+          style={styles.chartCard}
+          onPress={() => navigation.navigate('PlaylistDetails', { title: 'Top 50 - Canada' })}
+        >
+          <Image source={{ uri: 'https://via.placeholder.com/150' }} style={styles.chartImage} />
           <Text style={styles.chartTitle}>Top 50</Text>
           <Text style={styles.chartSubtitle}>Canada</Text>
+        </TouchableOpacity>
         </View>
         <View style={styles.chartItem}>
           <Text style={styles.chartTitle}>Top 50</Text>
@@ -186,6 +194,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#888',
   },
+  
   trendingAlbums: {
     flexDirection: 'row',
     marginTop: 10,
@@ -238,4 +247,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+
