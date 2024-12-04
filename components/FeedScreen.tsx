@@ -5,9 +5,10 @@ const feedData = [
   {
     id: '1',
     user: 'Jessica Gonzalez',
+    avatar: require('../assets/feed_screen/Avatar_4.png'),
     trackTitle: 'Flower',
     postedTime: '3d',
-    image: 'https://via.placeholder.com/150', // Replace with the actual image URL
+    image: require('../assets/feed_screen/Image_93.png'), 
     listens: 125,
     duration: '05:15',
     likes: 20,
@@ -17,11 +18,25 @@ const feedData = [
   {
     id: '2',
     user: 'William King',
+    avatar: require('../assets/feed_screen/Avatar_5.png'),
     trackTitle: 'Me',
     postedTime: '5d',
-    image: 'https://via.placeholder.com/150', // Replace with the actual image URL
+    image: require('../assets/feed_screen/Image_94.png'), 
     listens: 245,
     duration: '05:15',
+    likes: 45,
+    comments: 9,
+    shares: 2,
+  },
+  {
+    id: '3',
+    user: 'John Doe',
+    avatar: require('../assets/feed_screen/Avatar_9.png'),
+    trackTitle: 'Shape of You',
+    postedTime: '5d',
+    image: require('../assets/feed_screen/Image_47.png'), 
+    listens: 245,
+    duration: '04:15',
     likes: 45,
     comments: 9,
     shares: 2,
@@ -33,9 +48,7 @@ const FeedScreen = () => {
     <View style={styles.card}>
       <View style={styles.header}>
         <Image
-          source={{
-            uri: 'https://via.placeholder.com/40', // Replace with user avatar image URL
-          }}
+          source={item.avatar}
           style={styles.avatar}
         />
         <View style={styles.userInfo}>
@@ -43,7 +56,7 @@ const FeedScreen = () => {
           <Text style={styles.postedTime}>{`Posted a track • ${item.postedTime}`}</Text>
         </View>
       </View>
-      <Image source={{ uri: item.image }} style={styles.trackImage} />
+      <Image source={item.image} style={styles.trackImage} />
       <View style={styles.details}>
         <Text style={styles.trackTitle}>{item.trackTitle}</Text>
         <Text style={styles.userName}>{item.user}</Text>
@@ -75,6 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     flex: 1,
     padding: 10,
+    marginTop: 40
   },
   card: {
     backgroundColor: '#fff',

@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, ScrollView, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import { NavigationProp } from '@react-navigation/native';
 
@@ -21,11 +22,14 @@ export default function HomeScreen({ navigation }: { navigation: NavigationProp<
       </View>
 
       {/* Search Bar */}
+      <View style={styles.searchBarContainer}>
       <TextInput
         style={styles.searchBar}
         placeholder="What you want to listen to"
         placeholderTextColor="#888"
       />
+      <Icon name="search" size={20} color="gray" style={styles.searchIcon} />
+      </View>
 
       {/* Suggestions */}
       <Text style={styles.sectionTitle}>Suggestions for you</Text>
@@ -45,24 +49,25 @@ export default function HomeScreen({ navigation }: { navigation: NavigationProp<
       {/* Charts */}
       <Text style={styles.sectionTitle}>Charts</Text>
       <View style={styles.charts}>
-        <View style={styles.chartItem}>
+        <LinearGradient colors={['#b20a2c', '#fffbd5']} style={styles.chartItem}>
         <TouchableOpacity
-          style={styles.chartCard}
+          
           onPress={() => navigation.navigate('PlaylistDetails', { title: 'Top 50 - Canada' })}
         >
-          <Image source={{ uri: 'https://via.placeholder.com/150' }} style={styles.chartImage} />
+          <ImageBackground source={require('../assets/home_screen/top50_canada.jpg')}  />
           <Text style={styles.chartTitle}>Top 50</Text>
           <Text style={styles.chartSubtitle}>Canada</Text>
         </TouchableOpacity>
-        </View>
-        <View style={styles.chartItem}>
+        </LinearGradient>
+        
+        <LinearGradient colors={['#fceabb', '#f8b500']}  style={styles.chartItem}>
           <Text style={styles.chartTitle}>Top 50</Text>
           <Text style={styles.chartSubtitle}>Global</Text>
-        </View>
-        <View style={styles.chartItem}>
+        </LinearGradient>
+        <LinearGradient colors={['#c6ffdd', '#fbd786', '#f7797d']} style={styles.chartItem}>
           <Text style={styles.chartTitle}>Top 50</Text>
           <Text style={styles.chartSubtitle}>Trending</Text>
-        </View>
+        </LinearGradient>
       </View>
 
       {/* Trending Albums */}
@@ -90,9 +95,12 @@ export default function HomeScreen({ navigation }: { navigation: NavigationProp<
       <Text style={styles.sectionTitle}>Popular artists</Text>
       <ScrollView horizontal style={styles.popularArtists}>
         <View style={styles.artistItem}>
+          <TouchableOpacity onPress={() => navigation.navigate('ArtistProfileScreen', { title: '' })}>
           <Image source={require('../assets/home_screen/Image_39.png')} style={styles.artistImage} />
           <Text style={styles.artistName}>Jennifer Wilson</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.followButton}><Text style={styles.followText}>Follow</Text></TouchableOpacity>
+          
         </View>
         <View style={styles.artistItem}>
           <Image source={require('../assets/home_screen/Image_40.png')} style={styles.artistImage} />
@@ -114,6 +122,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
+    marginTop: 40,
     backgroundColor: '#fff',
   },
   header: {
@@ -140,12 +149,20 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginLeft: 10,
   },
-  searchBar: {
-    marginTop: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 20,
+  searchBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
     backgroundColor: '#f0f0f0',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+  },
+  searchBar: {
+    flex: 1,
+    paddingVertical: 8,
+  },
+  searchIcon: {
+    marginLeft: 5,
   },
   sectionTitle: {
     fontSize: 20,
