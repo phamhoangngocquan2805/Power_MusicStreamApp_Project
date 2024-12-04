@@ -12,6 +12,14 @@ const SearchScreen = () => {
     { id: '5', title: 'Me Ali', artist: 'Pedro Moreno', plays: '23M', duration: '3:36', image: 'https://cdn-thumbs.imagevenue.com/f6/3a/e9/ME19JY5C_t.png' },
     { id: '6', title: 'Me Quis A', artist: 'Elena Jimenez', plays: '10M', duration: '6:22', image: 'https://cdn-thumbs.imagevenue.com/7c/b6/4b/ME19JY5D_t.png' },
     { id: '7', title: 'Me Light', artist: 'John Smith', plays: '81M', duration: '5:15', image: 'https://cdn-thumbs.imagevenue.com/f2/af/8d/ME19JY5E_t.png' },
+    { id: '8', title: 'Me Forever', artist: 'Sophia Cruz', plays: '45M', duration: '4:12', image: 'https://cdn-thumbs.imagevenue.com/8b/11/43/ME19JY75_t.png' },
+    { id: '9', title: 'Me Anthem', artist: 'Liam Martinez', plays: '12M', duration: '3:58', image: 'https://cdn-thumbs.imagevenue.com/2a/b4/eb/ME19JY77_t.png' },
+    { id: '10', title: 'Me Again', artist: 'Olivia Davis', plays: '88M', duration: '5:03', image: 'https://cdn-thumbs.imagevenue.com/db/a6/e6/ME19JY74_t.png' },
+    { id: '11', title: 'Me Galaxy', artist: 'Emma Wilson', plays: '1.2M', duration: '6:45', image: 'https://cdn-thumbs.imagevenue.com/ec/2a/8c/ME19JY73_t.png' },
+    { id: '12', title: 'Me Soul', artist: 'Noah Lee', plays: '74M', duration: '4:20', image: 'https://cdn-thumbs.imagevenue.com/ea/eb/4e/ME19JY72_t.png' },
+    { id: '13', title: 'Me Beats', artist: 'Lucas Brown', plays: '3.8M', duration: '3:48', image: 'https://cdn-thumbs.imagevenue.com/18/78/5e/ME19JY71_t.png' },
+    { id: '14', title: 'Me Fly', artist: 'Isabella White', plays: '27M', duration: '4:30', image: 'https://cdn-thumbs.imagevenue.com/f2/af/8d/ME19JY5E_t.png' },
+    { id: '15', title: 'Me Rise', artist: 'James Taylor', plays: '52M', duration: '5:10', image: 'https://cdn-thumbs.imagevenue.com/6a/ba/82/ME19JY5B_t.png' }
   ];
 
   const filteredData = data.filter(item =>
