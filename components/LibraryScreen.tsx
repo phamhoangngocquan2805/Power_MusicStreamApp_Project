@@ -1,121 +1,5 @@
-// import React from "react";
-// import { View, Text, FlatList, Image, TouchableOpacity, TextInput, StyleSheet } from "react-native";
-
-// const libraryData = [
-//   {
-//     id: "1",
-//     title: "FLOWER",
-//     artist: "Jessica Gonzalez",
-//     plays: "2M",
-//     duration: "3:36",
-//     liked: true,
-//     image: "placeholder-image-url",
-//   },
-//   {
-//     id: "2",
-//     title: "Shape of You",
-//     artist: "Anthony Taylor",
-//     plays: "68M",
-//     duration: "3:35",
-//     liked: true,
-//     image: "placeholder-image-url",
-//   },
-//   {
-//     id: "3",
-//     title: "Blinding Lights",
-//     artist: "Ashley Scott",
-//     songsCount: "4 songs",
-//     liked: false,
-//     image: "placeholder-image-url",
-//   },
-//   {
-//     id: "4",
-//     title: "Levitating",
-//     artist: "Anthony Taylor",
-//     plays: "9M",
-//     duration: "7:48",
-//     liked: true,
-//     image: "placeholder-image-url",
-//   },
-//   {
-//     id: "5",
-//     title: "Astronaut in the Ocean",
-//     artist: "Pedro Moreno",
-//     plays: "23M",
-//     duration: "3:36",
-//     liked: true,
-//     image: "placeholder-image-url",
-//   },
-//   {
-//     id: "6",
-//     title: "Dynamite",
-//     artist: "Elena Jimenez",
-//     plays: "10M",
-//     duration: "6:22",
-//     liked: true,
-//     image: "placeholder-image-url",
-//   },
-// ];
-
-// const LibraryScreen = () => {
-//   return (
-//     <View style={styles.container}>
-//       <View style={styles.header}>
-//         <Text style={styles.title}>Your Library</Text>
-//         <TextInput style={styles.searchInput} placeholder="Search..." />
-//       </View>
-//       <FlatList
-//         data={libraryData}
-//         keyExtractor={(item) => item.id}
-//         renderItem={({ item }) => (
-//           <View style={styles.listItem}>
-//             <Image source={{ uri: item.image }} style={styles.thumbnail} />
-//             <View style={styles.details}>
-//               <Text style={styles.songTitle}>{item.title}</Text>
-//               <Text style={styles.artist}>{item.artist}</Text>
-//               {item.songsCount && <Text style={styles.meta}>{item.songsCount}</Text>}
-//               {!item.songsCount && (
-//                 <Text style={styles.meta}>
-//                   {item.plays} • {item.duration}
-//                 </Text>
-//               )}
-//             </View>
-//             {item.liked && (
-//               <TouchableOpacity>
-//                 <Text style={styles.likeIcon}>💙</Text>
-//               </TouchableOpacity>
-//             )}
-//           </View>
-//         )}
-//       />
-//     </View>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   container: { flex: 1, backgroundColor: "#fff" },
-//   header: { padding: 16, backgroundColor: "#f8f8f8", borderBottomWidth: 1, borderBottomColor: "#ddd" },
-//   title: { fontSize: 20, fontWeight: "bold", marginBottom: 8 },
-//   searchInput: { backgroundColor: "#eaeaea", padding: 10, borderRadius: 8 },
-//   listItem: { flexDirection: "row", padding: 16, alignItems: "center", borderBottomWidth: 1, borderBottomColor: "#f1f1f1" },
-//   thumbnail: { width: 50, height: 50, borderRadius: 8, backgroundColor: "#ddd" },
-//   details: { flex: 1, marginLeft: 10 },
-//   songTitle: { fontSize: 16, fontWeight: "bold" },
-//   artist: { fontSize: 14, color: "#555" },
-//   meta: { fontSize: 12, color: "#888" },
-//   likeIcon: { fontSize: 20, color: "#1DB954" },
-// });
-
-// export default LibraryScreen;
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import {View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const data = [
@@ -125,7 +9,7 @@ const data = [
     artist: "Jessica Gonzalez",
     plays: "2,1M",
     duration: "3:36",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/2e/39/3a/ME19JY20_t.png",
     liked: true,
   },
   {
@@ -134,7 +18,7 @@ const data = [
     artist: "Anthony Taylor",
     plays: "68M",
     duration: "3:35",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/66/78/b3/ME19JY21_t.png",
     liked: true,
   },
   {
@@ -143,7 +27,7 @@ const data = [
     artist: "Ashley Scott",
     plays: "",
     duration: "",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/7f/c3/74/ME19JY22_t.png",
     liked: false,
   },
   {
@@ -152,7 +36,7 @@ const data = [
     artist: "Anthony Taylor",
     plays: "9M",
     duration: "7:48",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/cc/ac/f7/ME19JY23_t.png",
     liked: true,
   },
   {
@@ -161,7 +45,7 @@ const data = [
     artist: "Pedro Moreno",
     plays: "23M",
     duration: "3:36",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/96/7d/6d/ME19JY24_t.png",
     liked: true,
   },
   {
@@ -170,9 +54,54 @@ const data = [
     artist: "Elena Jimenez",
     plays: "10M",
     duration: "6:22",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/1e/49/e2/ME19JY25_t.png",
     liked: true,
   },
+  {
+    id: "7",
+    title: "Stay",
+    artist: "John Smith",
+    plays: "81M",
+    duration: "5:15",
+    cover: "https://cdn-thumbs.imagevenue.com/18/78/5e/ME19JY71_t.png",
+    liked: false,
+  },
+  {
+    id: "8",
+    title: "Peaches",
+    artist: "Sophia Cruz",
+    plays: "45M",
+    duration: "4:12",
+    cover: "https://cdn-thumbs.imagevenue.com/ea/eb/4e/ME19JY72_t.png",
+    liked: true,
+  },
+  {
+    id: "9",
+    title: "Good 4 U",
+    artist: "Liam Martinez",
+    plays: "12M",
+    duration: "3:58",
+    cover: "https://cdn-thumbs.imagevenue.com/ec/2a/8c/ME19JY73_t.png",
+    liked: false,
+  },
+  {
+    id: "10",
+    title: "Montero (Call Me By Your Name)",
+    artist: "Olivia Davis",
+    plays: "88M",
+    duration: "5:03",
+    cover: "https://cdn-thumbs.imagevenue.com/db/a6/e6/ME19JY74_t.png",
+    liked: true,
+  },
+  {
+    id: "11",
+    title: "Drivers License",
+    artist: "Emma Wilson",
+    plays: "1.2M",
+    duration: "6:45",
+    cover: "https://cdn-thumbs.imagevenue.com/2a/b4/eb/ME19JY77_t.png",
+    liked: false,
+  }
 ];
 
 const LibraryScreen = () => {
@@ -213,7 +142,7 @@ const LibraryScreen = () => {
 
       <View style={styles.userRow}>
         <Image
-          source={{ uri: "https://via.placeholder.com/50" }}
+          source={{ uri: "https://cdn-thumbs.imagevenue.com/c5/19/15/ME19JY26_t.png" }}
           style={styles.userAvatar}
         />
         <View style={styles.userInfo}>
