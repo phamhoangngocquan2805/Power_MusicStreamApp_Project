@@ -14,6 +14,11 @@ const SearchScreen = () => {
     { id: '7', title: 'Me Light', artist: 'John Smith', plays: '81M', duration: '5:15', image: 'https://via.placeholder.com/50' },
   ];
 
+  const filteredData = data.filter(item =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.artist.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const renderItem = ({ item }: { item: { id: string; title: string; artist: string; plays: string; duration: string; image: string } }) => (
     <View style={styles.itemContainer}>
       <Image source={{ uri: item.image }} style={styles.image} />
@@ -46,7 +51,7 @@ const SearchScreen = () => {
         <Text style={styles.tab}>Artists</Text>
       </View>
       <FlatList
-        data={data}
+        data={filteredData}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
       />
