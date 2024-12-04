@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { NavigationProp } from '@react-navigation/native';
 
 const playlistData = {
   title: 'Top 50 - Canada',
   subtitle: 'Daily chart-toppers update',
   likes: '1,234',
   duration: '05:10:18',
-  coverImage: 'https://via.placeholder.com/150', // Replace with the actual image URL
+  coverImage: require('../assets/playlistdetails/Container_31.png'), 
   songs: [
     {
       id: '1',
@@ -14,7 +15,7 @@ const playlistData = {
       artist: 'Jessica Gonzalez',
       plays: '2.1M',
       duration: '3:36',
-      coverImage: 'https://via.placeholder.com/50', // Replace with actual image
+      coverImage: require('../assets/playlistdetails/Image_51.png'), 
     },
     {
       id: '2',
@@ -22,18 +23,61 @@ const playlistData = {
       artist: 'Anthony Taylor',
       plays: '68M',
       duration: '3:35',
-      coverImage: 'https://via.placeholder.com/50', // Replace with actual image
+      coverImage: require('../assets/playlistdetails/Image_52.png'), 
     },
-    // Add more songs here...
+    {
+      id: '3',
+      title: 'Blinding Lights',
+      artist: 'Ashley Scott',
+      plays: '68M',
+      duration: '3:35',
+      coverImage: require('../assets/playlistdetails/Image_53.png'), 
+    },
+    {
+      id: '4',
+      title: 'Levitating',
+      artist: 'Anthony Taylor',
+      plays: '9M',
+      duration: '7:48',
+      coverImage: require('../assets/playlistdetails/Image_54.png'), 
+    },
+    {
+      id: '5',
+      title: 'Astronaut in the Ocean',
+      artist: 'Pedro Moreno',
+      plays: '23M',
+      duration: '3:36',
+      coverImage: require('../assets/playlistdetails/Image_55.png'), 
+    },
+    {
+      id: '6',
+      title: 'Dynamite',
+      artist: 'Elena Jimenez',
+      plays: '10M',
+      duration: '6:22',
+      coverImage: require('../assets/playlistdetails/Image_56.png'), 
+    },
+    {
+      id: '7',
+      title: 'Peaches',
+      artist: 'John Smith',
+      plays: '81M',
+      duration: '5:15',
+      coverImage: require('../assets/playlistdetails/Image_57.png'), 
+    },
+    
+    
+    
+   
   ],
 };
 
-const PlaylistDetails = () => {
-  const renderSong = ({ item }: { item: { id: string; title: string; artist: string; plays: string; duration: string; coverImage: string; } }) => (
+const PlaylistDetails = ({ navigation }: { navigation: NavigationProp<any> }) => {
+  const renderSong = ({ item }:  { item: typeof playlistData.songs[0] })  => (
     <View style={styles.songContainer}>
-      <Image source={{ uri: item.coverImage }} style={styles.songImage} />
+      <Image source={item.coverImage} style={styles.songImage} />
       <View style={styles.songDetails}>
-        <Text style={styles.songTitle}>{item.title}</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('PlayAudioScreen', { title: '' })}><Text style={styles.songTitle}>{item.title}</Text></TouchableOpacity>
         <Text style={styles.songSubtitle}>
           {item.artist} • {item.plays}
         </Text>
@@ -46,7 +90,7 @@ const PlaylistDetails = () => {
     <View style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
-        <Image source={{ uri: playlistData.coverImage }} style={styles.coverImage} />
+        <Image source={playlistData.coverImage} style={styles.coverImage} />
         <View style={styles.headerDetails}>
           <Text style={styles.playlistTitle}>{playlistData.title}</Text>
           <Text style={styles.playlistSubtitle}>{playlistData.subtitle}</Text>
@@ -67,7 +111,7 @@ const PlaylistDetails = () => {
       {/* Now Playing Footer */}
       <View style={styles.footer}>
         <Image
-          source={{ uri: playlistData.songs[0].coverImage }}
+          source={playlistData.songs[0].coverImage }
           style={styles.footerImage}
         />
         <View style={styles.footerDetails}>
