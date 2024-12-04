@@ -5,13 +5,13 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const data = [
-    { id: '1', title: 'Me', artist: 'Jessica Gonzalez', plays: '2.1M', duration: '3:36', image: 'https://via.placeholder.com/50' },
-    { id: '2', title: 'Me Inc', artist: 'Anthony Taylor', plays: '600K', duration: '3:35', image: 'https://via.placeholder.com/50' },
-    { id: '3', title: 'Dozz Me', artist: 'Brian Bailey', plays: '93M', duration: '4:39', image: 'https://via.placeholder.com/50' },
-    { id: '4', title: 'Eastss Me', artist: 'Anthony Taylor', plays: '9M', duration: '7:48', image: 'https://via.placeholder.com/50' },
-    { id: '5', title: 'Me Ali', artist: 'Pedro Moreno', plays: '23M', duration: '3:36', image: 'https://via.placeholder.com/50' },
-    { id: '6', title: 'Me Quis A', artist: 'Elena Jimenez', plays: '10M', duration: '6:22', image: 'https://via.placeholder.com/50' },
-    { id: '7', title: 'Me Light', artist: 'John Smith', plays: '81M', duration: '5:15', image: 'https://via.placeholder.com/50' },
+    { id: '1', title: 'Me', artist: 'Jessica Gonzalez', plays: '2.1M', duration: '3:36', image: 'https://cdn-thumbs.imagevenue.com/4d/eb/58/ME19JY56_t.png' },
+    { id: '2', title: 'Me Inc', artist: 'Anthony Taylor', plays: '600K', duration: '3:35', image: 'https://cdn-thumbs.imagevenue.com/2f/d0/3c/ME19JY58_t.png' },
+    { id: '3', title: 'Dozz Me', artist: 'Brian Bailey', plays: '93M', duration: '4:39', image: 'https://cdn-thumbs.imagevenue.com/a7/a5/4b/ME19JY5A_t.png' },
+    { id: '4', title: 'Eastss Me', artist: 'Anthony Taylor', plays: '9M', duration: '7:48', image: 'https://cdn-thumbs.imagevenue.com/6a/ba/82/ME19JY5B_t.png' },
+    { id: '5', title: 'Me Ali', artist: 'Pedro Moreno', plays: '23M', duration: '3:36', image: 'https://cdn-thumbs.imagevenue.com/f6/3a/e9/ME19JY5C_t.png' },
+    { id: '6', title: 'Me Quis A', artist: 'Elena Jimenez', plays: '10M', duration: '6:22', image: 'https://cdn-thumbs.imagevenue.com/7c/b6/4b/ME19JY5D_t.png' },
+    { id: '7', title: 'Me Light', artist: 'John Smith', plays: '81M', duration: '5:15', image: 'https://cdn-thumbs.imagevenue.com/f2/af/8d/ME19JY5E_t.png' },
   ];
 
   const filteredData = data.filter(item =>
