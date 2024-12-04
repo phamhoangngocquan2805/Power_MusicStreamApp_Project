@@ -9,7 +9,7 @@ const data = [
     artist: "Jessica Gonzalez",
     plays: "2,1M",
     duration: "3:36",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/2e/39/3a/ME19JY20_t.png",
     liked: true,
   },
   {
@@ -18,7 +18,7 @@ const data = [
     artist: "Anthony Taylor",
     plays: "68M",
     duration: "3:35",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/66/78/b3/ME19JY21_t.png",
     liked: true,
   },
   {
@@ -27,7 +27,7 @@ const data = [
     artist: "Ashley Scott",
     plays: "",
     duration: "",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/7f/c3/74/ME19JY22_t.png",
     liked: false,
   },
   {
@@ -36,7 +36,7 @@ const data = [
     artist: "Anthony Taylor",
     plays: "9M",
     duration: "7:48",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/cc/ac/f7/ME19JY23_t.png",
     liked: true,
   },
   {
@@ -45,7 +45,7 @@ const data = [
     artist: "Pedro Moreno",
     plays: "23M",
     duration: "3:36",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/96/7d/6d/ME19JY24_t.png",
     liked: true,
   },
   {
@@ -54,7 +54,7 @@ const data = [
     artist: "Elena Jimenez",
     plays: "10M",
     duration: "6:22",
-    cover: "https://via.placeholder.com/50",
+    cover: "https://cdn-thumbs.imagevenue.com/1e/49/e2/ME19JY25_t.png",
     liked: true,
   },
 ];
@@ -97,7 +97,7 @@ const LibraryScreen = () => {
 
       <View style={styles.userRow}>
         <Image
-          source={{ uri: "https://via.placeholder.com/50" }}
+          source={{ uri: "https://cdn-thumbs.imagevenue.com/c5/19/15/ME19JY26_t.png" }}
           style={styles.userAvatar}
         />
         <View style={styles.userInfo}>
