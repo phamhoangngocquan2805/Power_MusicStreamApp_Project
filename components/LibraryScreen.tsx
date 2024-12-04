@@ -57,6 +57,51 @@ const data = [
     cover: "https://cdn-thumbs.imagevenue.com/1e/49/e2/ME19JY25_t.png",
     liked: true,
   },
+  {
+    id: "7",
+    title: "Stay",
+    artist: "John Smith",
+    plays: "81M",
+    duration: "5:15",
+    cover: "https://cdn-thumbs.imagevenue.com/18/78/5e/ME19JY71_t.png",
+    liked: false,
+  },
+  {
+    id: "8",
+    title: "Peaches",
+    artist: "Sophia Cruz",
+    plays: "45M",
+    duration: "4:12",
+    cover: "https://cdn-thumbs.imagevenue.com/ea/eb/4e/ME19JY72_t.png",
+    liked: true,
+  },
+  {
+    id: "9",
+    title: "Good 4 U",
+    artist: "Liam Martinez",
+    plays: "12M",
+    duration: "3:58",
+    cover: "https://cdn-thumbs.imagevenue.com/ec/2a/8c/ME19JY73_t.png",
+    liked: false,
+  },
+  {
+    id: "10",
+    title: "Montero (Call Me By Your Name)",
+    artist: "Olivia Davis",
+    plays: "88M",
+    duration: "5:03",
+    cover: "https://cdn-thumbs.imagevenue.com/db/a6/e6/ME19JY74_t.png",
+    liked: true,
+  },
+  {
+    id: "11",
+    title: "Drivers License",
+    artist: "Emma Wilson",
+    plays: "1.2M",
+    duration: "6:45",
+    cover: "https://cdn-thumbs.imagevenue.com/2a/b4/eb/ME19JY77_t.png",
+    liked: false,
+  }
 ];
 
 const LibraryScreen = () => {
