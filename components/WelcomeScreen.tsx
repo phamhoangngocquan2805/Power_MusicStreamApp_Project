@@ -1,87 +1,74 @@
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 
-// Màn hình Welcome
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NavigationProp } from '@react-navigation/native';
 
-type RootStackParamList = {
-  MainScreen: undefined;
-  HomeTabs: undefined;
-};
-
-type WelcomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'MainScreen'>;
-
-type Props = {
-  navigation: WelcomeScreenNavigationProp;
-};
-
-const WelcomeScreen = ({ navigation }: Props) => {
+const LaunchScreen = ({ navigation }: { navigation: NavigationProp<any> }) => {
   return (
     <ImageBackground
       source={require('../assets/LaunchScreen/Image112.png')}
       style={styles.background}
     >
-      <View style={styles.overlay}>
-        <Text style={styles.logo}>🎵</Text>
-        <Text style={styles.title}>Welcome to Premium</Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>Your music</Text>
+        <Text style={styles.title}>Your artists</Text>
+
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('HomeTabs')} 
+          style={styles.createButton}
+          onPress={() => navigation.navigate('Register')}
         >
-          <Text style={styles.buttonText}>Start listening</Text>
+          <Text style={styles.createButtonText}>Create an account</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Login')}
+        >
+          <Text style={styles.loginText}>I already have an account</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>
   );
 };
 
-
-
-
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    resizeMode: 'cover',
     justifyContent: 'center',
-    alignItems: 'center',
-  },
-  overlay: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  logo: {
-    fontSize: 40,
-    color: 'white',
-    marginBottom: 10,
-  },
-  title: {
-    fontSize: 24,
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: 'black',
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    borderRadius: 20,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
-  mainText: {
-    fontSize: 24,
-    color: 'black',
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    textAlign: 'center',
+    marginBottom: 5,
+  },
+  createButton: {
+    backgroundColor: '#000000',
+    paddingVertical: 15,
+    paddingHorizontal: 60,
+    borderRadius: 30,
+    marginTop: 40,
+  },
+  createButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  loginText: {
+    marginTop: 20,
+    fontSize: 20,
+    color: '#000',
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
 
-export default WelcomeScreen;
+export default LaunchScreen;

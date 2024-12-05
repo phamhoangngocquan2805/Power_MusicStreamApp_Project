@@ -7,6 +7,7 @@ import PlaylistDetails from './components/PlaylistDetails';
 import ArtistProfileScreen from './components/ArtistProfileScreen';
 import PlayAudioScreen from './components/PlayAudioScreen';
 import WelcomeScreen from './components/WelcomeScreen';
+import LoginScreen from './components/LoginScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,14 +18,18 @@ export default function App() {
       <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
-          options={{ title: 'Welcome Screen'}}
+          options={{  headerShown: false }}
         />
         <Stack.Screen
           name="HomeTabs"
           component={BottomTabs}
           options={{ headerShown: false }}
         />
-       
+       <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ title: 'Login' }}
+        />
         <Stack.Screen
           name="PlaylistDetails"
           component={PlaylistDetails}
