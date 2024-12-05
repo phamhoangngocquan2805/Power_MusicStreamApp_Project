@@ -15,7 +15,8 @@ const playlistData = {
       artist: 'Jessica Gonzalez',
       plays: '2.1M',
       duration: '3:36',
-      coverImage: require('../assets/playlistdetails/Image_51.png'), 
+      coverImage: require('../assets/playlistdetails/Image_51.png'),
+      audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' 
     },
     {
       id: '2',
@@ -24,6 +25,7 @@ const playlistData = {
       plays: '68M',
       duration: '3:35',
       coverImage: require('../assets/playlistdetails/Image_52.png'), 
+      audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     },
     {
       id: '3',
@@ -32,6 +34,7 @@ const playlistData = {
       plays: '68M',
       duration: '3:35',
       coverImage: require('../assets/playlistdetails/Image_53.png'), 
+      audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     },
     {
       id: '4',
@@ -40,6 +43,7 @@ const playlistData = {
       plays: '9M',
       duration: '7:48',
       coverImage: require('../assets/playlistdetails/Image_54.png'), 
+      audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     },
     {
       id: '5',
@@ -48,6 +52,7 @@ const playlistData = {
       plays: '23M',
       duration: '3:36',
       coverImage: require('../assets/playlistdetails/Image_55.png'), 
+      audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     },
     {
       id: '6',
@@ -56,6 +61,7 @@ const playlistData = {
       plays: '10M',
       duration: '6:22',
       coverImage: require('../assets/playlistdetails/Image_56.png'), 
+      audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     },
     {
       id: '7',
@@ -64,6 +70,7 @@ const playlistData = {
       plays: '81M',
       duration: '5:15',
       coverImage: require('../assets/playlistdetails/Image_57.png'), 
+      audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
     },
     
     
@@ -77,7 +84,7 @@ const PlaylistDetails = ({ navigation }: { navigation: NavigationProp<any> }) =>
     <View style={styles.songContainer}>
       <Image source={item.coverImage} style={styles.songImage} />
       <View style={styles.songDetails}>
-        <TouchableOpacity onPress={() => navigation.navigate('PlayAudioScreen', { title: '' })}><Text style={styles.songTitle}>{item.title}</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('PlayerScreen', {song : item})}><Text style={styles.songTitle}>{item.title}</Text></TouchableOpacity>
         <Text style={styles.songSubtitle}>
           {item.artist} • {item.plays}
         </Text>

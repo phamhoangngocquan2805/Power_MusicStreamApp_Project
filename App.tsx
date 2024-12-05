@@ -5,14 +5,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabs from './components/BottomTabs';
 import PlaylistDetails from './components/PlaylistDetails'; 
 import ArtistProfileScreen from './components/ArtistProfileScreen';
-import PlayAudioScreen from './components/PlayAudioScreen';
+import PlayerScreen from './components/PlayerScreen';
+import PlayerScreenProps from './components/PlayerScreenProps';
 import WelcomeScreen from './components/WelcomeScreen';
 import LoginScreen from './components/LoginScreen';
 import RegisterScreen from './components/RegisterScreen';
 
+
+
 const Stack = createStackNavigator();
 
 export default function App() {
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -47,12 +51,16 @@ export default function App() {
           options={{ title: 'Artist Profile' }}
         />
         <Stack.Screen
-          name="PlayAudioScreen"
-          component={PlayAudioScreen}
-          options={{ title: 'Play An Audio' }}
+          name="PlayerScreen"
+          component={(props: PlayerScreenProps) => <PlayerScreen {...props} />}
+          options={{ title: 'Play Audio' }}
         />
+          
       </Stack.Navigator>
+    
     </NavigationContainer>
+    
+    
   );
 }
 

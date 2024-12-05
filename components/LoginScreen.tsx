@@ -5,8 +5,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NavigationProp } from '@react-navigation/native';
 
 const LoginScreen = ({ navigation }: { navigation: NavigationProp<any> }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('user');
+  const [password, setPassword] = useState('123');
 
   const handleLogin = async () => {
     try {
